@@ -1,20 +1,23 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Todo
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="wrapper">
+    <ion-input class="wrapper__input" [(ngModel)]="value"></ion-input>
+    <ion-button class="wrapper__button" (click)="addItem()" [disabled]='value.lenght<2'>ADD</ion-button>
+  </div>
+  <div class="list">
+    <div class="list__item" [class.done]="item.isDone" *ngFor="let item of items; let ind = index; ">
+      {{item.value}}
+      <div>
+        <button class="btn list__item--done" (click)="setDone(ind)">done</button>
+        <button class="btn list__item--delete" (click)="deleteItem(ind)">delete</button>
+      </div>
+    </div>
   </div>
 </ion-content>

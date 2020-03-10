@@ -29,3 +29,56 @@
 ion-content ion-toolbar {
   --background: translucent;
 }
+
+.done {
+  color : red;
+  background-color: rgba(151, 175, 175, 0.4);
+}
+
+.wrapper {
+  display: flex;
+
+  &__input {
+    border : 1px solid blue ;
+    padding : 5px;
+    margin : 5px;
+    border-radius : 5px;
+
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction : column;
+
+  &__item {
+    padding : 10px;
+    margin : 4px;
+    border-radius : 5px;
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(117, 243, 117, 0/3);
+    border: 1px solid rgb(80, 119, 247);
+
+    &__value {
+      width: 50%;
+    }
+  }
+}
+
+.btn{
+  background: rgb(80, 119, 247);
+  border: 1px solid green;
+  padding: 3px;
+  height:30px;
+  width: 40px;
+  border-radius:  8px;
+
+  &:first-child {
+    margin-right: 5px;
+  }
+  &:hover {
+    background-color: lightgrey;
+  }
+}
